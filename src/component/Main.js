@@ -5,7 +5,7 @@ import Slider from './sj_component/Slider';
 import Partner from './pjh/Partner';
 import Inquiry from './pjh/Inquiry';
 import SizeInfo from './pjh/SizeInfo';
-import Branch from './pyn/Branch'
+import { Branch } from './pyn/Branch'
 import Useit from './pyn/Useit'
 import Review from './pyn/ReviewSwiper'
 

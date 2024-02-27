@@ -1,16 +1,52 @@
-import React from 'react'
+import React, { useState, useEffect, useRef } from 'react'
+import { Helmet } from 'react-helmet';
+
+
+
+
 import use from '../../data/data.json'
 import style from '../../sass/yn/branch.module.scss'
 import '../../sass/yn/branch.scss'
 
-import { Helmet } from 'react-helmet';
-
-import { useState, useEffect } from 'react';
 
 
-function Branch() {
-    const [region, setregion] = useState(0)
-    const [branch, setbranch] = useState(0)
+
+
+export const Branch = () =>{
+    const { kakao } = window
+    const [kakaoinfo, setkakaoinfo] = useState({
+        region : 0,
+        branch : 0 
+    }) ; // 지역번호 /
+
+    const branchregion = useRef(0);  //
+
+
+
+    const maponclick = (r, b) => {
+        // 지역, 지점모두 클릭
+        setkakaoinfo({
+            region : r,
+            branch : b  
+        })
+        branchregion.current = r;
+    }
+    
+
+    useEffect(()=>{ //html에 return 출력이 완료되면 실행
+ 
+        var container = document.getElementById('map'); //지도를 담을 영역의 DOM 레퍼런스
+        var options = { //지도를 생성할 때 필요한 기본 옵션
+            center: new kakao.maps.LatLng(...use.branch_info[kakaoinfo.branch].branch_pos), //지도의 중심좌표.
+            level: 3 //지도의 레벨(확대, 축소 정도)
+        };
+        
+        var map = new kakao.maps.Map(container, options); //지도 생성 및 객체 리턴
+        console.log(...use.branch_info[kakaoinfo.branch].branch_pos)
+        // 127.020346472276,37.5160790812474
+        
+    
+    },[kakaoinfo])
 
     return (
         <div className="mtb-10" data-aos="fade-up" data-aos-duration="2000">
@@ -24,14 +60,7 @@ function Branch() {
                 <div className="adMap container d-flex justify-content-between flex-column flex-md-row mt-5">
                     <div className="wrapper col-md-6">
                         <div id='map' className='map'>
-                            {
-                                use.branch_info[branch].branch_pos
-                            }
-                            {/* <Helmet>
-
-                                <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=8cb9e561bde2e24c49fcf16e0cda250e"></script>
-                           
-                            </Helmet> */}
+                          
                         </div>
                     </div>
 
@@ -57,8 +86,8 @@ function Branch() {
 
 
                                         <li
-                                            onClick={() => { setregion(i) }}
-                                            className={`${region === i ? 'on' : null} col-2`}>
+                                            onClick={() => { maponclick(i, 0) }}
+                                            className={`${kakaoinfo.region === i ? 'on' : null} col-2`}>
                                             {v.region_name}
                                         </li>
                                     </>
@@ -74,8 +103,8 @@ function Branch() {
                                 return (
                                     <>
                                         <li
-                                            onClick={() => { setbranch(ii) }}
-                                            className={`${branch === ii ? 'on' : null} col-2`}>
+                                            onClick={() => { maponclick(branchregion.current, ii);  }}
+                                            className={`${kakaoinfo.branch === ii ? 'on' : null} col-2`}>
                                             {vv.branch_name}
                                         </li>
                                     </>
@@ -89,4 +118,4 @@ function Branch() {
     );
 }
 
-export default Branch;
+

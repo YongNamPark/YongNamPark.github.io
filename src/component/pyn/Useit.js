@@ -35,13 +35,13 @@ function Useit() {
                         })
                     }
                 </div>
-                <div className='content d-flex flex-row justify-content-center align-items-center py-5 col-12 m-auto'>
+                <div className='content d-flex flex-row justify-content-center align-items-center py-5 col-lg-12 m-auto'>
 
                     {
                         use.tab[tabnm] &&
-                        <div className={` d-flex align-items-center justify-content-center col-8`}>
+                        <div className={` d-flex flex-column flex-lg-row align-items-center justify-content-center col-lg-8 col-md-10 col-sm-12`}>
                             <img src={use.tab[tabnm].tabact.tabimg} className={style.tab_img} alt="" />
-                            <div className={`${style.tab_w} px-5`}>
+                            <div className={`${style.tab_w} px-5 mx-sm-3`}>
                                 <span className={`${style.tab_span} mx-5 py-3 d-inline-block`}><strong>STEP {tabnm + 1}</strong>
                                 </span> <br />
                                 <span className={style.tab_subspan}>{use.tab[tabnm].tabact.tabtext}</span> <br />

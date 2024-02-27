@@ -1,0 +1,117 @@
+@import url('https://fonts.googleapis.com/css2?family=Gasoek+One&family=Nanum+Gothic+Coding&family=Nanum+Myeongjo&family=Nanum+Pen+Script&family=Noto+Sans+KR&display=swap');
+/* hello world!! */
+* {
+    font-family: 'Noto Sans KR', sans-serif !important;
+    font-weight: 1000 !important;
+
+    padding: 0;
+    margin: 0;
+
+}
+
+.personalColor {
+    color: #e2f2ff;
+    /* 로고 색상과 동일. */
+}
+
+.personalColorBold {
+    color: #0091ff;
+}
+
+.personalColorBoldBg {
+    background-color: #0091ff;
+}
+
+.personalColorBg {
+    background-color: #e2f2ff;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+ul {
+    list-style: none;
+}
+
+li {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.posFixed {
+    position: fixed;
+}
+
+.posAbs {
+    position: absolute;
+}
+
+.posRel {
+    position: relative;
+}
+
+.dpFlex {
+    display: flex;
+}
+
+.dpBlock {
+    display: block;
+}
+
+.jcb {
+    justify-content: space-between;
+}
+
+.jcc {
+    justify-content: center;
+}
+
+.aic {
+    align-items: center;
+}
+
+.container {
+    margin: auto;
+    width: 1400px;
+
+    /* margin: 100px 0; */
+}
+
+.height100 {
+    height: 100px;
+}
+
+.flexDirCol {
+    flex-direction: column;
+}
+
+.flexDirRow {
+    flex-direction: row;
+}
+
+.mt-10 {
+    margin-top: 10rem;
+}
+
+.mb-10 {
+    margin-bottom: 10rem;
+}
+
+.mt-15 {
+    margin-top: 15rem;
+}
+
+.mb-15 {
+    margin-bottom: 15rem;
+}
+
+.mtb-10 {
+    margin: 10rem 0;
+}
+
+.mtb-15 {
+    margin: 15rem 0;
+}

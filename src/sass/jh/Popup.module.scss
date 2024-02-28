@@ -12,4 +12,9 @@
     border-radius: 10%;
     transition: all 0.2s linear;
 }
-
+.modalbutton{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 1rem;
+    align-items: center;
+}

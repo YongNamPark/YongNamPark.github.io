@@ -13,6 +13,7 @@
     "react": "^18.2.0",
     "react-bootstrap": "^2.9.1",
     "react-bootstrap-icons": "^1.10.3",
+    "react-cookie": "^7.1.0",
     "react-dom": "^18.2.0",
     "react-helmet": "^6.1.0",
     "react-kakao-maps": "^0.0.13",
@@ -30,7 +31,7 @@
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build"
   },
-  "homepage": "https://yongnampark.github.io",
+  "homepage": ".",
   "eslintConfig": {
     "extends": [
       "react-app",
